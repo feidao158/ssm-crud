@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 全局 setting 配置，根据需要添加  -->
+    <!--开启二级缓存  -->
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!-- 配置别名 -->
+    <typeAliases>
+        <!-- 批量扫描别名 -->
+        <package name="com.zw.po"/>
+    </typeAliases>
+
+    <!-- 配置mapper,由于使用 spring 和mybatis 的整合包进行 mapper 扫描，这里不需要配置了
+        必须遵循：mapper.xml 和 mapper.java 文件同名且在同一个目录下
+     -->
+    <!-- <mappers>
+    </mappers> -->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"/>
+            <property name="offsetAsPageNum" value="false"/>
+            <property name="rowBoundsWithCount" value="false"/>
+            <property name="pageSizeZero" value="true"/>
+            <property name="reasonable" value="false"/>
+            <property name="supportMethodsArguments" value="false"/>
+            <property name="returnPageInfo" value="none"/>
+        </plugin>
+    </plugins>
+
+</configuration>

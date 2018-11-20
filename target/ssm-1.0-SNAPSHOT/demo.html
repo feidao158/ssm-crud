@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+    <script src="bs/js/jquery-1.9.1.min_032572112793cf4c98033d88c0e59db8.js"></script>
+    <script src="bs/js/bootstrap.min.js"></script>
+    <script src="bs/js/jqPaginator.js"></script>
+</head>
+<body>
+    <div class="container">
+       <div class="page-header">PageHelper</div>
+        <table class="table table-hover table-responsive">
+            <tr class="active">
+                <td>cname</td>
+                <td>gender</td>
+                <td>birthday</td>
+                <td>cellphone</td>
+                <td>email</td>
+                <td>description</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="center-block">
+
+            <ul class="pagination">
+
+            </ul>
+
+
+        </div>
+    </div>
+
+</body>
+<script>
+    $.get("http://localhost:8080/demo",function (data) {
+       // alert($("tr:gt(0)").length)    10
+       //  alert((data.length))    10
+        $.each(data,function (index,value) {
+            $(".table").find("tr").eq(index+1).children().eq(0).html(value.cname)
+            $(".table").find("tr").eq(index+1).children().eq(1).html(value.gender)
+            $(".table").find("tr").eq(index+1).children().eq(2).html(value.birthday)
+            $(".table").find("tr").eq(index+1).children().eq(3).html(value.cellphone)
+            $(".table").find("tr").eq(index+1).children().eq(4).html(value.email)
+            $(".table").find("tr").eq(index+1).children().eq(5).html(value.description)
+        })
+
+
+    })
+
+    $(function () {
+        // $('#id').jqPaginator('option', {
+        //     currentPage: 1
+        // });
+        $.get("http://localhost:8080/pageInfo",function (data) {
+               var json =  JSON.parse(data)
+
+
+            $(".pagination").jqPaginator("option",{
+                totalPages:json.totalPages,
+                totalCounts:json.totalCounts
+            })
+        })
+
+    })
+    $(".pagination").jqPaginator({
+        totalPages: 100,
+        visiblePages: 10,
+        currentPage: 1,
+        first: '<li class="first"><a href="javascript:void(0);">First</a></li>',
+        prev: '<li class="prev"><a href="javascript:void(0);">Previous</a></li>',
+        next: '<li class="next"><a href="javascript:void(0);">Next</a></li>',
+        last: '<li class="last"><a href="javascript:void(0);">Last</a></li>',
+        page: '<li class="page"><a href="javascript:void(0);">{{page}}</a></li>',
+
+        onPageChange: function (num) {
+                $.get("http://localhost:8080/find/"+num,function (data) {
+                    var json = JSON.parse(data)
+
+                    $.each(json,function (index,value) {
+
+                        $(".table").find("tr").eq(index+1).children().eq(0).html(value.cname)
+                        $(".table").find("tr").eq(index+1).children().eq(1).html(value.gender)
+                        $(".table").find("tr").eq(index+1).children().eq(2).html(value.birthday)
+                        $(".table").find("tr").eq(index+1).children().eq(3).html(value.cellphone)
+                        $(".table").find("tr").eq(index+1).children().eq(4).html(value.email)
+                        $(".table").find("tr").eq(index+1).children().eq(5).html(value.description)
+                    })
+                })
+        }
+
+    })
+
+</script>
+</html>
