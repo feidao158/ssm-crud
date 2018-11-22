@@ -1,5 +1,8 @@
 package com.zw.po;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
 public class Customer {

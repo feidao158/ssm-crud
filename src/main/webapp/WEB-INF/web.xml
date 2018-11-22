@@ -4,6 +4,18 @@
          xmlns="http://java.sun.com/xml/ns/j2ee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <welcome-file-list>
+        <welcome-file>demo.html</welcome-file>
+    </welcome-file-list>
+  <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.html</url-pattern>
+        <url-pattern>*.css</url-pattern>
+        <url-pattern>/bs/*</url-pattern>
+
+        <url-pattern>/images/*</url-pattern>
+        </servlet-mapping>
 
   <context-param>
     <param-name>contextConfigLocation</param-name>

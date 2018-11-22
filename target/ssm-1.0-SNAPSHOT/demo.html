@@ -6,139 +6,157 @@
     <link rel="stylesheet" href="bs/css/bootstrap.min.css">
     <script src="bs/js/jquery-1.9.1.min_032572112793cf4c98033d88c0e59db8.js"></script>
     <script src="bs/js/bootstrap.min.js"></script>
+    <script src="bs/js/vue.min.js"></script>
     <script src="bs/js/jqPaginator.js"></script>
+
+
+
+
 </head>
-<body>
+<body style="background: #eeeeee">
+<nav class="navbar-default navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="container">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand">镜像</a>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="">用户信息</a></li>
+                <li><a href="">用户修改</a></li>
+                <li><a href="">更多信息</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="">未登录</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</nav>
     <div class="container">
-       <div class="page-header">PageHelper</div>
-        <table class="table table-hover table-responsive">
+
+        <div id="tb">
+        <table class="table table-hover table-responsive table-striped bg-warning">
+            <thead>
             <tr class="active">
-                <td>cname</td>
-                <td>gender</td>
-                <td>birthday</td>
-                <td>cellphone</td>
-                <td>email</td>
-                <td>description</td>
+                <th>cid</th>
+                <th>cname</th>
+                <th>gender</th>
+                <th>birthday</th>
+                <th>cellphone</th>
+                <th>email</th>
+                <th>description</th>
+                <th></th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            </thead>
+            <tbody>
+             <tr v-for="person in people">
+                 <td>{{person.cid}}</td>
+                 <td>{{person.cname}}</td>
+                 <td>{{person.gender}}</td>
+                 <td>{{person.birthday}}</td>
+                 <td>{{person.cellphone}}</td>
+                 <td>{{person.email}}</td>
+                 <td>{{person.description}}</td>
+                 <td><div @click="show" class="btn btn-success"><span class="glyphicon glyphicon-cog"></span></div>
+                 <div @click="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></div>
+                 </td>
+             </tr>
+
+            </tbody>
         </table>
-        <div class="center-block">
+        </div>
+        <div class="col-md-8 col-md-offset-2">
 
             <ul class="pagination">
 
             </ul>
 
-
         </div>
     </div>
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>这是一个标题</h3>
+                </div>
+               <div class="modal-body">
+                   <form action="" class="form-horizontal">
+                       <div class="form-group">
+                           <label for="" class="control-label col-md-2">cname</label>
+                           <div class="col-md-6">
+                           <input type="text" class="form-control">
+                           </div>
+                       </div>
+                       <div class="form-group">
+                           <label for="" class="control-label col-md-2">gender</label>
+                           <div class="col-md-6">
+                               <select name="" id="" class="form-control">
+                                   <option value="男">男</option>
+                                   <option value="女">女</option>
+                               </select>
+                           </div>
+                       </div>
+                       <!--日期选择-->
+                       <div class="form-group">
+                           <label for="" class="control-label col-md-2">birthday</label>
+                           <div class="col-md-6">
+                               <select name="" id="" class="form-control">
+                                   <option value="男">男</option>
+                                   <option value="女">女</option>
+                               </select>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+                <div class="modal-footer ">
+                    <div class="btn btn-primary">确定</div>
+                    <div class="btn btn-danger" @click="hide">取消</div>
+                </div>
 
+            </div>
+        </div>
+    </div>
 </body>
 <script>
-    $.get("http://localhost:8080/demo",function (data) {
-       // alert($("tr:gt(0)").length)    10
-       //  alert((data.length))    10
-        $.each(data,function (index,value) {
-            $(".table").find("tr").eq(index+1).children().eq(0).html(value.cname)
-            $(".table").find("tr").eq(index+1).children().eq(1).html(value.gender)
-            $(".table").find("tr").eq(index+1).children().eq(2).html(value.birthday)
-            $(".table").find("tr").eq(index+1).children().eq(3).html(value.cellphone)
-            $(".table").find("tr").eq(index+1).children().eq(4).html(value.email)
-            $(".table").find("tr").eq(index+1).children().eq(5).html(value.description)
-        })
+
+   var td =  new Vue({
+        el:"#tb",
+        data:{people:""},
+        methods:{change:function (data) {
+                this.people = data
+            },
+                show:function () {
+                    $(".modal").modal("show")
+
+                },
+                hide:function () {
+                    $(".modal").modal("hide")
+                }
 
 
+        }
     })
 
+   var modal = new Vue({
+       el:"#modal",
+       methods:{
+           hide:function () {
+               $(".modal").modal("hide")
+           }
+       }
+   })
+
+
+
     $(function () {
-        // $('#id').jqPaginator('option', {
-        //     currentPage: 1
-        // });
+
         $.get("http://localhost:8080/pageInfo",function (data) {
-               var json =  JSON.parse(data)
-
-
             $(".pagination").jqPaginator("option",{
-                totalPages:json.totalPages,
-                totalCounts:json.totalCounts
+                totalPages:data.totalPages,
+                totalCounts:data.totalCounts
             })
         })
 
@@ -154,19 +172,12 @@
         page: '<li class="page"><a href="javascript:void(0);">{{page}}</a></li>',
 
         onPageChange: function (num) {
+
                 $.get("http://localhost:8080/find/"+num,function (data) {
-                    var json = JSON.parse(data)
+                    td.change(data)
 
-                    $.each(json,function (index,value) {
-
-                        $(".table").find("tr").eq(index+1).children().eq(0).html(value.cname)
-                        $(".table").find("tr").eq(index+1).children().eq(1).html(value.gender)
-                        $(".table").find("tr").eq(index+1).children().eq(2).html(value.birthday)
-                        $(".table").find("tr").eq(index+1).children().eq(3).html(value.cellphone)
-                        $(".table").find("tr").eq(index+1).children().eq(4).html(value.email)
-                        $(".table").find("tr").eq(index+1).children().eq(5).html(value.description)
                     })
-                })
+
         }
 
     })
