@@ -6,29 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bb29b5a-f32a-4d42-82af-2daa299e0101" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zw/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zw/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zw/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zw/mapper/CustomerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zw/mapper/CustomerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zw/mapper/CustomerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zw/mapper/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zw/mapper/TestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zw/po/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zw/po/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zw/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zw/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zw/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zw/service/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zw/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zw/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zw/po/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zw/po/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/WEB-INF/classes/com/zw/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/WEB-INF/classes/com/zw/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/WEB-INF/classes/com/zw/po/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/WEB-INF/classes/com/zw/po/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-1.0-SNAPSHOT/demo.html" afterDir="false" />
-    </list>
+    <list default="true" id="4bb29b5a-f32a-4d42-82af-2daa299e0101" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -436,7 +414,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542847047220" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542848143399" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -608,7 +586,7 @@
       <workItem from="1542712807051" duration="1815000" />
       <workItem from="1542718298842" duration="1938000" />
       <workItem from="1542761747909" duration="17694000" />
-      <workItem from="1542846505741" duration="540000" />
+      <workItem from="1542846505741" duration="1089000" />
     </task>
     <servers />
   </component>
@@ -645,10 +623,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49166000" />
+    <option name="totallyTimeSpent" value="49715000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2660858" />

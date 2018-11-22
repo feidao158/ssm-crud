@@ -1,0 +1,337 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : 127.0.0.1_3306
+Source Server Version : 50553
+Source Host           : 127.0.0.1:3306
+Source Database       : customers
+
+Target Server Type    : MYSQL
+Target Server Version : 50553
+File Encoding         : 65001
+
+Date: 2018-11-22 09:02:38
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for t_customer
+-- ----------------------------
+DROP TABLE IF EXISTS `t_customer`;
+CREATE TABLE `t_customer` (
+  `cid` char(32) NOT NULL,
+  `cname` varchar(40) NOT NULL,
+  `gender` varchar(6) NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `cellphone` varchar(15) NOT NULL,
+  `email` varchar(40) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_customer
+-- ----------------------------
+INSERT INTO `t_customer` VALUES ('5AD56F3DEE144366BD0D459D7469467A', '张威', '女', '2018-04-12', '555', '18660403850@163.com', '123');
+INSERT INTO `t_customer` VALUES ('C53CBF10356A4A419F3137E62AC13DA1', 'ss', '男', '2018-09-15', '555', '22323232@qq.com', 'sss');
+INSERT INTO `t_customer` VALUES ('41EB34C281B547369859F2995C3CD4B8', 'cstm_1', '女', '2014-07-13', '1861', 'cstm_1@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E7E1958B856446DAA647109EDF731761', 'cstm_2', '男', '2014-07-13', '1862', 'cstm_2@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FC8A2708616F47BCB454C08EA36B6CE1', 'cstm_3', '女', '2014-07-13', '1863', 'cstm_3@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('955B0D5186664E739B71DB85416DB07B', 'cstm_4', '男', '2014-07-13', '1864', 'cstm_4@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4', '4', '4', '2014-07-13', '44', '4', '4');
+INSERT INTO `t_customer` VALUES ('F92B6E443170489ABB54183E0248375E', 'cstm_6', '男', '2014-07-13', '1866', 'cstm_6@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('2AE0B539ECFC40C685B490E6BEFECCB3', 'cstm_7', '女', '2014-07-13', '1867', 'cstm_7@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B5637B9F88394C0F80B1DCDAFDD92A36', 'cstm_8', '男', '2014-07-13', '1868', 'cstm_8@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('EC91AB097B8E49B393CB2451B4D0947A', 'cstm_9', '女', '2014-07-13', '1869', 'cstm_9@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('716F131E10E14529A677D8FBFBAF350D', 'cstm_10', '男', '2014-07-13', '18610', 'cstm_10@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('72AA754055454E629797EB690817BA31', 'cstm_11', '女', '2014-07-13', '18611', 'cstm_11@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('7DB590EED47C4C4AB8027256B7BCBD6D', 'cstm_12', '男', '2014-07-13', '18612', 'cstm_12@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('374A51F53AE94FF6A7F6D0746E9FCD7E', 'cstm_13', '女', '2014-07-13', '18613', 'cstm_13@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FAB2C94D1DD04C40B9CCA1102B335E3E', 'cstm_14', '男', '2014-07-13', '18614', 'cstm_14@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('C3C73DE008EA44AAA88DF148E69D3A4D', 'cstm_15', '女', '2014-07-13', '18615', 'cstm_15@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('21838B5BA40942D08541690CCF72013B', 'cstm_16', '男', '2014-07-13', '18616', 'cstm_16@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('2D788B1A9FE349B8AD7B213DF785BA00', 'cstm_17', '女', '2014-07-13', '18617', 'cstm_17@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('6CC4EA6BC941445D81045690F5E3D5C6', 'cstm_18', '男', '2014-07-13', '18618', 'cstm_18@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('48E64A6E242D48999E821DB3A495B5F3', 'cstm_19', '女', '2014-07-13', '18619', 'cstm_19@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D8BA836CB5A440B4AB40A5378401C7FE', 'cstm_20', '男', '2014-07-13', '18620', 'cstm_20@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('667A03EC3F004128A5EA45C1B466B80B', 'cstm_21', '女', '2014-07-13', '18621', 'cstm_21@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F202AC5D049047F18A6BF7F6348C4261', 'cstm_22', '男', '2014-07-13', '18622', 'cstm_22@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('34F837E6B2304F818EAD0DF2FD28473F', 'cstm_23', '女', '2014-07-13', '18623', 'cstm_23@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F8270FCB034B48D1B1F0BA894E40A905', 'cstm_24', '男', '2014-07-13', '18624', 'cstm_24@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('BD704A6290684C1E807D6A8FE450AA7A', 'cstm_25', '女', '2014-07-13', '18625', 'cstm_25@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9406E1079D5743119F79D7B924BB6040', 'cstm_26', '男', '2014-07-13', '18626', 'cstm_26@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('8C51C6F7FA1D46A782E3CC4A8BEECDE3', 'cstm_27', '女', '2014-07-13', '18627', 'cstm_27@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('8794B678BFC84E43ABA666CD5D50C0A2', 'cstm_28', '男', '2014-07-13', '18628', 'cstm_28@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D3ECF0CEB2BE4361A4F71B3CEEB12219', 'cstm_29', '女', '2014-07-13', '18629', 'cstm_29@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('EE5BD9893B3D4BD1B0DF12C6969F72C2', 'cstm_30', '男', '2014-07-13', '18630', 'cstm_30@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('42029776D8484F4E91AB46C034DC8CE2', 'cstm_31', '女', '2014-07-13', '18631', 'cstm_31@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('29282AE64C624690822FB2DD00785F70', 'cstm_32', '男', '2014-07-13', '18632', 'cstm_32@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('3D7FCB7D4F1A481AA12691D85B97710F', 'cstm_33', '女', '2014-07-13', '18633', 'cstm_33@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('33D0EB3337D745DA824E486252EAF221', 'cstm_34', '男', '2014-07-13', '18634', 'cstm_34@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0D81CB7589E940CDBD1F9304272D2C79', 'cstm_35', '女', '2014-07-13', '18635', 'cstm_35@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9FAC135111BA400A8D841BF9FF1C3FA0', 'cstm_36', '男', '2014-07-13', '18636', 'cstm_36@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4C9F1DAB2A31446A99D73D4CA3BB6477', 'cstm_37', '女', '2014-07-13', '18637', 'cstm_37@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('3F5BB2F8F24F4C27A5CB253C77B9EAE0', 'cstm_38', '男', '2014-07-13', '18638', 'cstm_38@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('83889AD646AD47F399BB52138C064CF7', 'cstm_39', '女', '2014-07-13', '18639', 'cstm_39@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9C65A5F7AB604DFFBF90CA97676A312F', 'cstm_40', '男', '2014-07-13', '18640', 'cstm_40@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E620399F2CDD49919E3D26EF5166D68E', 'cstm_41', '女', '2014-07-13', '18641', 'cstm_41@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('ECFAA8CE25B74675A227970C6F8A3101', 'cstm_42', '男', '2014-07-13', '18642', 'cstm_42@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('6E89CC615139406CB976E5571A301C29', 'cstm_43', '女', '2014-07-13', '18643', 'cstm_43@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0560CA6812B34F248D07A725499A4216', 'cstm_44', '男', '2014-07-13', '18644', 'cstm_44@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('237A1E5CAF2D4B72B40CCFB3AF1C165E', 'cstm_45', '女', '2014-07-13', '18645', 'cstm_45@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E388A7C0330F4EA6B453DADFCE7A0034', 'cstm_46', '男', '2014-07-13', '18646', 'cstm_46@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('24FF67CE92294C2AAC789CBFBF1339C9', 'cstm_47', '女', '2014-07-13', '18647', 'cstm_47@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('64FD1CE6E11B485BB027745144146138', 'cstm_48', '男', '2014-07-13', '18648', 'cstm_48@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('EB428D01BF94457687412D19586C60AF', 'cstm_49', '女', '2014-07-13', '18649', 'cstm_49@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CCD5441E61B243218AE79D61C5FEF2FA', 'cstm_50', '男', '2014-07-13', '18650', 'cstm_50@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('BE6C21BE4C90474E9706F122BF8F8A76', 'cstm_51', '女', '2014-07-13', '18651', 'cstm_51@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B002E3FD6CCD42AC88A29124D0102186', 'cstm_52', '男', '2014-07-13', '18652', 'cstm_52@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9256FC038E084796840EA8C6ED4BFC49', 'cstm_53', '女', '2014-07-13', '18653', 'cstm_53@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('5E35DB656A8E46D68D5E1D5C3283364F', 'cstm_54', '男', '2014-07-13', '18654', 'cstm_54@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CFF2DA5F210E40FC9EB4855910CB7C61', 'cstm_55', '女', '2014-07-13', '18655', 'cstm_55@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('6D51AF8A33E74D73B6158442351CB89E', 'cstm_56', '男', '2014-07-13', '18656', 'cstm_56@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('90CE57DA9CF64CFC8EBDBD75DACC3082', 'cstm_57', '女', '2014-07-13', '18657', 'cstm_57@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9DB82F8962934FF29FCABB8B9A473F81', 'cstm_58', '男', '2014-07-13', '18658', 'cstm_58@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D135C3831F524BDE9654AA20C677F522', 'cstm_59', '女', '2014-07-13', '18659', 'cstm_59@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4A5CBA30D03B46E6826EF019C9C4AEEA', 'cstm_60', '男', '2014-07-13', '18660', 'cstm_60@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F00925AD3FA7499F9C6EBAA05A9D8D12', 'cstm_61', '女', '2014-07-13', '18661', 'cstm_61@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('A382917B81AB4241A049D3F8C5836FD8', 'cstm_62', '男', '2014-07-13', '18662', 'cstm_62@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1797DE642E194944B94CDF93E7E3699F', 'cstm_63', '女', '2014-07-13', '18663', 'cstm_63@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('16AC3BAAC1E347338A2B79F627944546', 'cstm_64', '男', '2014-07-13', '18664', 'cstm_64@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AE8F5DE683D941FBA285F6A89E9DFC3F', 'cstm_65', '女', '2014-07-13', '18665', 'cstm_65@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CE24E17C34BE4F469F7D5959C07C11C9', 'cstm_66', '男', '2014-07-13', '18666', 'cstm_66@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('49DFDE57D372474EBDF4A746A466BA98', 'cstm_67', '女', '2014-07-13', '18667', 'cstm_67@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('5D01610BB1B94FE9B6FE6741D71981EA', 'cstm_68', '男', '2014-07-13', '18668', 'cstm_68@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FBA5C1C0E5CA430F8184D53207E78B5F', 'cstm_69', '女', '2014-07-13', '18669', 'cstm_69@163.com', 'Demo');
+INSERT INTO `t_customer` VALUES ('37E6944D356F439FB43D90C3DC4CC167', 'cstm_70', '男', '2014-07-13', '18670', 'cstm_70@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('7C07F227195041E89A49E4CE445C5938', 'cstm_71', '女', '2014-07-13', '18671', 'cstm_71@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('2A90546360134744ABF9A6ED2FB449D8', 'cstm_72', '男', '2014-07-13', '18672', 'cstm_72@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('38B079B844E3433295C61D9353C88158', 'cstm_73', '女', '2014-07-13', '18673', 'cstm_73@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AA325F64D10943B59968265D73D0DEAE', 'cstm_74', '男', '2014-07-13', '18674', 'cstm_74@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9CFBD564DC3246E2A35DAE9486C990DB', 'cstm_75', '女', '2014-07-13', '18675', 'cstm_75@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AAB27CE9795A4C63A51CBDBF70C1E04A', 'cstm_76', '男', '2014-07-13', '18676', 'cstm_76@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FACD16AFCC904DB092613808B44AB086', 'cstm_77', '女', '2014-07-13', '18677', 'cstm_77@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('827062B324A04624BFD3408476D8F790', 'cstm_78', '男', '2014-07-13', '18678', 'cstm_78@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E0E0CE5F99D54019A06EF9B5AC7B9D51', 'cstm_79', '女', '2014-07-13', '18679', 'cstm_79@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('7D13BF201F8B40F78930361E6335C7F5', 'cstm_80', '男', '2014-07-13', '18680', 'cstm_80@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('8635E0A87D4640568EED7A18F27421A8', 'cstm_81', '女', '2014-07-13', '18681', 'cstm_81@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('914C3F9F99BF4B72A9BFD373EBD46394', 'cstm_82', '男', '2014-07-13', '18682', 'cstm_82@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F401D12D1A2141AF937D59C91FD7405D', 'cstm_83', '女', '2014-07-13', '18683', 'cstm_83@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E2CD26B3894E49CD979943FC1C64C083', 'cstm_84', '男', '2014-07-13', '18684', 'cstm_84@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9DA68DC2FD3041BA8A65DAA07E08FEDC', 'cstm_85', '女', '2014-07-13', '18685', 'cstm_85@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('26882D89346342308A3EDDABC7C227C8', 'cstm_86', '男', '2014-07-13', '18686', 'cstm_86@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AC5ACCF1345244F7AA9437CA8828EF52', 'cstm_87', '女', '2014-07-13', '18687', 'cstm_87@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('EC50A4A8237147F9BCE991C300EF54B4', 'cstm_88', '男', '2014-07-13', '18688', 'cstm_88@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D2A43DCBAAE74BF39118AEC1E9BB8A1D', 'cstm_89', '女', '2014-07-13', '18689', 'cstm_89@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4D3A8C8345B34A1C8ADA64EF9DBB68CB', 'cstm_90', '男', '2014-07-13', '18690', 'cstm_90@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('971FED11B96E414A80FA64CABC65FD98', 'cstm_91', '女', '2014-07-13', '18691', 'cstm_91@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('105CB79D8762493DA47F3338930C1433', 'cstm_92', '男', '2014-07-13', '18692', 'cstm_92@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1C106139F4884BBFAC47F180EBB5920F', 'cstm_93', '女', '2014-07-13', '18693', 'cstm_93@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D7FC36A166124406AF1B65CDAFA47573', 'cstm_94', '男', '2014-07-13', '18694', 'cstm_94@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('3324A8BE5CAC4626A4C04E362A3CA751', 'cstm_95', '女', '2014-07-13', '18695', 'cstm_95@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('8D50B7BC62934B1285A2DDAC03F7AF6E', 'cstm_96', '男', '2014-07-13', '18696', 'cstm_96@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('24579322385C41BE88DF7D7C6F72126C', 'cstm_97', '女', '2014-07-13', '18697', 'cstm_97@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('DE6D88B69BCD4494921CEDE0F9AA7BFF', 'cstm_98', '男', '2014-07-13', '18698', 'cstm_98@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('69B27B9257C14FA6BCA532AB8D8D3B3E', 'cstm_99', '女', '2014-07-13', '18699', 'cstm_99@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('24995838F8824C60BA8D9D19A7A13044', 'cstm_100', '男', '2014-07-13', '186100', 'cstm_100@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9977224B01F24673A9D485F8BE861035', 'cstm_101', '女', '2014-07-13', '186101', 'cstm_101@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('480BD555E4724A588B263F4935DE64E1', 'cstm_102', '男', '2014-07-13', '186102', 'cstm_102@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('2A8AB9A7B5654046AC9BFCA31B0AC7D6', 'cstm_103', '女', '2014-07-13', '186103', 'cstm_103@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('623E73E8AE7140F7BA56E0D98CD7E826', 'cstm_104', '男', '2014-07-13', '186104', 'cstm_104@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0EB88F925E2940CF81B611828A76A007', 'cstm_105', '女', '2014-07-13', '186105', 'cstm_105@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FAF3639F52DA4724B73E6FD569A2B263', 'cstm_106', '男', '2014-07-13', '186106', 'cstm_106@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4324D7457ACA4369B61DDEE746420855', 'cstm_107', '女', '2014-07-13', '186107', 'cstm_107@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('33F58A09970142D3B6B1B43526C38B81', 'cstm_108', '男', '2014-07-13', '186108', 'cstm_108@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('95678D85834B45DE80A1751779D26169', 'cstm_109', '女', '2014-07-13', '186109', 'cstm_109@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('39A00702D318459C987E33B8B8AE04D7', 'cstm_110', '男', '2014-07-13', '186110', 'cstm_110@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('3CD47452820F4C35B33B9C4CFB3BF9DE', 'cstm_111', '女', '2014-07-13', '186111', 'cstm_111@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0C63C5C3EA154868BC80410DB0C5BDF2', 'cstm_112', '男', '2014-07-13', '186112', 'cstm_112@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FBEE6D9AA91841D2B5937CC06FCA180A', 'cstm_113', '女', '2014-07-13', '186113', 'cstm_113@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('C77C222042EF4E0EB3CB8460312A1EB8', 'cstm_114', '男', '2014-07-13', '186114', 'cstm_114@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AD6AEFC339904A5EABCF12C4402B5600', 'cstm_115', '女', '2014-07-13', '186115', 'cstm_115@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('10F8B53A8AE84AB39CD963B621FBFE47', 'cstm_116', '男', '2014-07-13', '186116', 'cstm_116@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CAE94B994E11460B823A3E00DB665AE9', 'cstm_117', '女', '2014-07-13', '186117', 'cstm_117@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1A81C7EB7AF2490E8514A350E301608D', 'cstm_118', '男', '2014-07-13', '186118', 'cstm_118@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FFFDF9C847EF414CA905635ECF8224B2', 'cstm_119', '女', '2014-07-13', '186119', 'cstm_119@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FD8FE0C27A564B70A22181153CA49556', 'cstm_120', '男', '2014-07-13', '186120', 'cstm_120@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D28BF9B71B644E7B8CF0ADCF2BF243BD', 'cstm_121', '女', '2014-07-13', '186121', 'cstm_121@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AF72F1ED2BF34E7CAFE0956160BDAD26', 'cstm_122', '男', '2014-07-13', '186122', 'cstm_122@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('74ADD5FE82BC422BAA10A40C4505F048', 'cstm_123', '女', '2014-07-13', '186123', 'cstm_123@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F1EAE4C9DE224D1E8EB4AB78B34B95EE', 'cstm_124', '男', '2014-07-13', '186124', 'cstm_124@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0C99B3CFD9724E4BBD0B5AB2CA720EB5', 'cstm_125', '女', '2014-07-13', '186125', 'cstm_125@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('2DD6F2BC290A44D185A6207E8974109D', 'cstm_126', '男', '2014-07-13', '186126', 'cstm_126@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E358C7FEF10F464BB6157B6BBB47D7D6', 'cstm_127', '女', '2014-07-13', '186127', 'cstm_127@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('66A3FD04F44D47CF979DDBECC90ABE62', 'cstm_128', '男', '2014-07-13', '186128', 'cstm_128@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('36725661D51A44E5BE518CEF29C2D0B7', 'cstm_129', '女', '2014-07-13', '186129', 'cstm_129@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('10D497F75E574775B9C421E4515F603A', 'cstm_130', '男', '2014-07-13', '186130', 'cstm_130@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('435834E5BCEF434FB8E50AD6F464D6CF', 'cstm_131', '女', '2014-07-13', '186131', 'cstm_131@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CA2192BBE71041DCB99A9EAA7496E055', 'cstm_132', '男', '2014-07-13', '186132', 'cstm_132@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('DBE9D9E7F6AD42F18A8C3EA13AA2BE9C', 'cstm_133', '女', '2014-07-13', '186133', 'cstm_133@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('08E90BC681F34D5DB4E136EAE91ACB73', 'cstm_134', '男', '2014-07-13', '186134', 'cstm_134@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('BA01E8B36A81436EB0B84EBA49074BF5', 'cstm_135', '女', '2014-07-13', '186135', 'cstm_135@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0091ABE5017B4DF7B04E6B3A6477FAB3', 'cstm_136', '男', '2014-07-13', '186136', 'cstm_136@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F95D43AC166F4B13BDF8399E1CBE4146', 'cstm_137', '女', '2014-07-13', '186137', 'cstm_137@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('10B4C86A7ABB40C1A6E6B8223BF43D69', 'cstm_138', '男', '2014-07-13', '186138', 'cstm_138@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('5E9A172B4799478192743EE223AC02C2', 'cstm_139', '女', '2014-07-13', '186139', 'cstm_139@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('288DBEB486BB433CA90CB435A55F840C', 'cstm_140', '男', '2014-07-13', '186140', 'cstm_140@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('35831207FD934742B94038314858ECEA', 'cstm_141', '女', '2014-07-13', '186141', 'cstm_141@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('7FE18A966ADC4D2F9E17E82AD8DCE186', 'cstm_142', '男', '2014-07-13', '186142', 'cstm_142@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('A77117593EB4429795917E53D2A6441C', 'cstm_143', '女', '2014-07-13', '186143', 'cstm_143@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1250FA4949FE43D998865A6A4C4F1CB1', 'cstm_144', '男', '2014-07-13', '186144', 'cstm_144@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('99AAB7A63E70430F8419869BDE91B757', 'cstm_145', '女', '2014-07-13', '186145', 'cstm_145@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('5702549E8D2F44199959CF94037F77E9', 'cstm_146', '男', '2014-07-13', '186146', 'cstm_146@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4EFB55CDECB64D878794961558502B2F', 'cstm_147', '女', '2014-07-13', '186147', 'cstm_147@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('DE48F48FE0C14E9AA023ACE607EB403E', 'cstm_148', '男', '2014-07-13', '186148', 'cstm_148@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4C76C68FA35E4FEDBF60F54A9DE268F4', 'cstm_149', '女', '2014-07-13', '186149', 'cstm_149@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('981A6CE573A940FBAEF5F3F4927CA95C', 'cstm_150', '男', '2014-07-13', '186150', 'cstm_150@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1D7149FC62FD4C099359D048B98D30B1', 'cstm_151', '女', '2014-07-13', '186151', 'cstm_151@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('052E2D0450074431BEF9F1C8DB48B0A6', 'cstm_152', '男', '2014-07-13', '186152', 'cstm_152@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('BF2C5B5AF055472DB4155107657CB082', 'cstm_153', '女', '2014-07-13', '186153', 'cstm_153@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('91580B8B98384E35988C570249BC76D9', 'cstm_154', '男', '2014-07-13', '186154', 'cstm_154@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FBE5F5965A044D4F84B7F07CC26A6A6C', 'cstm_155', '女', '2014-07-13', '186155', 'cstm_155@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E3C43D5274714D83B29EA900CE347B2B', 'cstm_156', '男', '2014-07-13', '186156', 'cstm_156@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AFF6A035D6914075BA2D3F105037CE13', 'cstm_157', '女', '2014-07-13', '186157', 'cstm_157@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('6F8CCB40A7F34ABF80629583E69B9E2E', 'cstm_158', '男', '2014-07-13', '186158', 'cstm_158@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('7FB60A50C206464FAE6D47683F6EE7E2', 'cstm_159', '女', '2014-07-13', '186159', 'cstm_159@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('A5F11B2C15CC4B9E9A7B43029767873D', 'cstm_160', '男', '2014-07-13', '186160', 'cstm_160@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('2A6925B268AC4E25B03023ADBD24A5EC', 'cstm_161', '女', '2014-07-13', '186161', 'cstm_161@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('372954E6F6F8416D8F92A060BFA25067', 'cstm_162', '男', '2014-07-13', '186162', 'cstm_162@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('C9F2A49AE14D44DB93C07D19C0EF5479', 'cstm_163', '女', '2014-07-13', '186163', 'cstm_163@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D86AEA1021CB40E8B16B7C3D4E44E8E8', 'cstm_164', '男', '2014-07-13', '186164', 'cstm_164@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('3E8F36102E4742B6952B73D36F4B5640', 'cstm_165', '女', '2014-07-13', '186165', 'cstm_165@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('5E3143678E2940E99DCE065EA5786B8C', 'cstm_166', '男', '2014-07-13', '186166', 'cstm_166@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('17D363DEBA824CEBB1282A602F26B00C', 'cstm_167', '女', '2014-07-13', '186167', 'cstm_167@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9C1194349AF047BAB8F03CE315AF8B95', 'cstm_168', '男', '2014-07-13', '186168', 'cstm_168@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('15F63D008DE9417F83FD8423F8C1602D', 'cstm_169', '女', '2014-07-13', '186169', 'cstm_169@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('88A9D071964B4F38A2D29B38765204F5', 'cstm_170', '男', '2014-07-13', '186170', 'cstm_170@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('80F24FF7396447029C5EFCB5293F7006', 'cstm_171', '女', '2014-07-13', '186171', 'cstm_171@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('72CFF2C31E33490EBF2C579562EAF1C3', 'cstm_172', '男', '2014-07-13', '186172', 'cstm_172@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9F1D14DD249B4053960107A246C2F38E', 'cstm_173', '女', '2014-07-13', '186173', 'cstm_173@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('433B9BDE41A141F48C32CD991FBFBE56', 'cstm_174', '男', '2014-07-13', '186174', 'cstm_174@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1BD36FFBC3524B14B2E6302BD6A7B3D3', 'cstm_175', '女', '2014-07-13', '186175', 'cstm_175@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('53888774AB0843A29C409FE9451F0DA6', 'cstm_176', '男', '2014-07-13', '186176', 'cstm_176@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B62CF530B0E04385B058922B83723498', 'cstm_177', '女', '2014-07-13', '186177', 'cstm_177@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F11A0187771243398E0E409CB8D35B8F', 'cstm_178', '男', '2014-07-13', '186178', 'cstm_178@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('501DCC243888460BB663FDDEE11B51F5', 'cstm_179', '女', '2014-07-13', '186179', 'cstm_179@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('114447C3C3F0494FA36F74BC81EBB490', 'cstm_180', '男', '2014-07-13', '186180', 'cstm_180@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('11E799D9B6A74DB2ADC4220E24ED1A6B', 'cstm_181', '女', '2014-07-13', '186181', 'cstm_181@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('5D281E6BDF0E4A6C9B38E9F8FB0CB5C3', 'cstm_182', '男', '2014-07-13', '186182', 'cstm_182@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D7727631A6EA44AE8093563912BE2D27', 'cstm_183', '女', '2014-07-13', '186183', 'cstm_183@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D1E394794A8741019A166973F42C8B71', 'cstm_184', '男', '2014-07-13', '186184', 'cstm_184@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D80AAB82F8A24841A7106023DA6BDA86', 'cstm_185', '女', '2014-07-13', '186185', 'cstm_185@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4930F85D1861455A91D2CC4DFCA60522', 'cstm_186', '男', '2014-07-13', '186186', 'cstm_186@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9D6459E23ACB4C1DB23D9272F1F685EA', 'cstm_187', '女', '2014-07-13', '186187', 'cstm_187@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D5FD1ECCD7C14DC789B5C0337F4C28F3', 'cstm_188', '男', '2014-07-13', '186188', 'cstm_188@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('115FFE8CA1B24ACA91FEC664AFFF27F3', 'cstm_189', '女', '2014-07-13', '186189', 'cstm_189@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('322058EC8D374D6DA92948C7A982927F', 'cstm_190', '男', '2014-07-13', '186190', 'cstm_190@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4EB86C34066845EF9D59B56B46FED4BA', 'cstm_191', '女', '2014-07-13', '186191', 'cstm_191@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4DFE59B8AC9F45EEB207ACC8C47A572E', 'cstm_192', '男', '2014-07-13', '186192', 'cstm_192@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('5BD745D5D42D4C75B4525D1882788415', 'cstm_193', '女', '2014-07-13', '186193', 'cstm_193@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0EA1F238E60F48729137BFFB1F336093', 'cstm_194', '男', '2014-07-13', '186194', 'cstm_194@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F49D332E30A0403091E6955B0208ABE9', 'cstm_195', '女', '2014-07-13', '186195', 'cstm_195@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CAD7A5239CF2405BABA85241A05214D7', 'cstm_196', '男', '2014-07-13', '186196', 'cstm_196@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E913D988F8C74AD59C1ECAF9CF0F2C23', 'cstm_197', '女', '2014-07-13', '186197', 'cstm_197@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('726DE00F9FC142058376C33D6D054A61', 'cstm_198', '男', '2014-07-13', '186198', 'cstm_198@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('84B8AF6F81B5435DB1FC9EF7E825B726', 'cstm_199', '女', '2014-07-13', '186199', 'cstm_199@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('DCB9EBCF666B4934BE95D29F7DDACC75', 'cstm_200', '男', '2014-07-13', '186200', 'cstm_200@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('20E33ABE3A0D4EC093C68ED254F27D30', 'cstm_201', '女', '2014-07-13', '186201', 'cstm_201@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('ACEAD080C7A44DD09DCEDA63949604A9', 'cstm_202', '男', '2014-07-13', '186202', 'cstm_202@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9CCD9E0D703F46A08CEECEC47746A455', 'cstm_203', '女', '2014-07-13', '186203', 'cstm_203@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('06A5394FCC2D4F3DB868231548878214', 'cstm_204', '男', '2014-07-13', '186204', 'cstm_204@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('8574B247E1B44DB996401A52F1B41760', 'cstm_205', '女', '2014-07-13', '186205', 'cstm_205@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B6E2F7BF69724DCFBB69A4619A43E0CB', 'cstm_206', '男', '2014-07-13', '186206', 'cstm_206@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9546E6B65B814CFEA2FB601D3D53F7EA', 'cstm_207', '女', '2014-07-13', '186207', 'cstm_207@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9C68FDFD5EF549E4B47F4B0BDE395494', 'cstm_208', '男', '2014-07-13', '186208', 'cstm_208@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('035E8545B0404B05833DF4C10037FB41', 'cstm_209', '女', '2014-07-13', '186209', 'cstm_209@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('FCD25A2A5A2C404FABA8D7FAB6175E6B', 'cstm_210', '男', '2014-07-13', '186210', 'cstm_210@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('BE59E095D3804B65AB2E54ADC5BC1F4A', 'cstm_211', '女', '2014-07-13', '186211', 'cstm_211@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B73F2800C6A0412D85F1B1B7639E40F0', 'cstm_212', '男', '2014-07-13', '186212', 'cstm_212@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('A38CB9F96F994200B95E8BCC68C46BDB', 'cstm_213', '女', '2014-07-13', '186213', 'cstm_213@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D79E47CAB3AC4618953FB95EB83FDA18', 'cstm_214', '男', '2014-07-13', '186214', 'cstm_214@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('058D693DF5A24B699ED40ED449AB81EF', 'cstm_215', '女', '2014-07-13', '186215', 'cstm_215@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('50BCF9C8E0C84C3FB0E62985DBDF23EF', 'cstm_216', '男', '2014-07-13', '186216', 'cstm_216@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9C823D0516904335A58A90BD30B7AA37', 'cstm_217', '女', '2014-07-13', '186217', 'cstm_217@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('313BE59D12584CE59FD321A9BC9FD4EC', 'cstm_218', '男', '2014-07-13', '186218', 'cstm_218@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('83E078D83E984447AB7A5E0F8D41001A', 'cstm_219', '女', '2014-07-13', '186219', 'cstm_219@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('318D191D7F3048E5BC764AEEF3E56C0E', 'cstm_220', '男', '2014-07-13', '186220', 'cstm_220@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D46EE24BA71C451CB0CE766F7BBE8A24', 'cstm_221', '女', '2014-07-13', '186221', 'cstm_221@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('23DEC5DEA6F643889EDD5E7CA1BA48A1', 'cstm_222', '男', '2014-07-13', '186222', 'cstm_222@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('A7A3FCF8604F416C9FBA4D846D95B78F', 'cstm_223', '女', '2014-07-13', '186223', 'cstm_223@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('26AA4520529E4E55B43270F0BEB0DC30', 'cstm_224', '男', '2014-07-13', '186224', 'cstm_224@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('6C8D072E77E04F50A1A8A83154AEB10D', 'cstm_225', '女', '2014-07-13', '186225', 'cstm_225@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('920C74EAD0E544E28B0353149947403B', 'cstm_226', '男', '2014-07-13', '186226', 'cstm_226@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0FABE88A0D744C869A6BBD9A9C992D41', 'cstm_227', '女', '2014-07-13', '186227', 'cstm_227@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('BA2D6F82097643D49C9F23898B1A7677', 'cstm_228', '男', '2014-07-13', '186228', 'cstm_228@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D83E1CB2436C49698C965BD7C5D29D8C', 'cstm_229', '女', '2014-07-13', '186229', 'cstm_229@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('60A37CAE4B454259A65E97F37E4CC497', 'cstm_230', '男', '2014-07-13', '186230', 'cstm_230@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CA6641FF3613498693E06CE0A3325735', 'cstm_231', '女', '2014-07-13', '186231', 'cstm_231@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1E000C63F38C4C9F9FD806A57A330F56', 'cstm_232', '男', '2014-07-13', '186232', 'cstm_232@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CAA357DC3FF1425EA0D864EDFA4E780E', 'cstm_233', '女', '2014-07-13', '186233', 'cstm_233@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AACA70DA7AAE4239B19DF7648D3C4191', 'cstm_234', '男', '2014-07-13', '186234', 'cstm_234@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('C19A660B98AD4FC9A95DA6F7CEE576D4', 'cstm_235', '女', '2014-07-13', '186235', 'cstm_235@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('2F2BDF46102841239A11D1CB642D1610', 'cstm_236', '男', '2014-07-13', '186236', 'cstm_236@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('271A18BBCC314E24B7200912815B2FC7', 'cstm_237', '女', '2014-07-13', '186237', 'cstm_237@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('65FCA4A0350B477DAF43ADC33E10B677', 'cstm_238', '男', '2014-07-13', '186238', 'cstm_238@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F58D5EE45ED144F6B10D384DC0D3CB27', 'cstm_239', '女', '2014-07-13', '186239', 'cstm_239@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('84658A639DE94A619C393173DB4E620A', 'cstm_240', '男', '2014-07-13', '186240', 'cstm_240@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1B10F7100B984653BB6CA7571582E2E4', 'cstm_241', '女', '2014-07-13', '186241', 'cstm_241@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('36B8717A4D184092A115A121414B7D8A', 'cstm_242', '男', '2014-07-13', '186242', 'cstm_242@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9FB328185D1C4892B2C9B020E7C45193', 'cstm_243', '女', '2014-07-13', '186243', 'cstm_243@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('C50395E3E4DA49918C58BCD7C40FA3D9', 'cstm_244', '男', '2014-07-13', '186244', 'cstm_244@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('DA757170257B41528ED5D4CAECABABBA', 'cstm_245', '女', '2014-07-13', '186245', 'cstm_245@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('023C0F5FB59243CF985E09D5A357DB73', 'cstm_246', '男', '2014-07-13', '186246', 'cstm_246@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('336E63844DCC4B37B092D951A5D31B76', 'cstm_247', '女', '2014-07-13', '186247', 'cstm_247@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('C440E27C1CDB4B5AA53ADB7020DD1193', 'cstm_248', '男', '2014-07-13', '186248', 'cstm_248@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E93657135662443CB05EBDDA30B4B2E9', 'cstm_249', '女', '2014-07-13', '186249', 'cstm_249@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4F1AC23F611D47418217D951D697FBEE', 'cstm_250', '男', '2014-07-13', '186250', 'cstm_250@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('23651BCF4FD048769595E3F68E3869C4', 'cstm_251', '女', '2014-07-13', '186251', 'cstm_251@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B56489E6C4814CCBAB33974F48D07FB2', 'cstm_252', '男', '2014-07-13', '186252', 'cstm_252@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('91FF413265B7440AAB58A18CB4E5C065', 'cstm_253', '女', '2014-07-13', '186253', 'cstm_253@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1CED0CCE55444AC18795DC662BCD78B2', 'cstm_254', '男', '2014-07-13', '186254', 'cstm_254@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('6C6D046819D64E5D912623F7F4BE1C86', 'cstm_255', '女', '2014-07-13', '186255', 'cstm_255@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CB676A7E33E94F7CB4FF231C28F5374B', 'cstm_256', '男', '2014-07-13', '186256', 'cstm_256@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('1822AE78502D4299B11B06D8EFB0F35E', 'cstm_257', '女', '2014-07-13', '186257', 'cstm_257@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('8E425C38199943AA8EF3163784715073', 'cstm_258', '男', '2014-07-13', '186258', 'cstm_258@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('39DC1096E333453581C96E267453567A', 'cstm_259', '女', '2014-07-13', '186259', 'cstm_259@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9A46686FF81441A0AA12FDD1CC014A43', 'cstm_260', '男', '2014-07-13', '186260', 'cstm_260@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E6F16876DA974A11B624D83BE9CAAEB5', 'cstm_261', '女', '2014-07-13', '186261', 'cstm_261@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('66F973866A044284962DF55DAE5422EA', 'cstm_262', '男', '2014-07-13', '186262', 'cstm_262@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CB97DF25912A45CA92AF7BF8DAD676B4', 'cstm_263', '女', '2014-07-13', '186263', 'cstm_263@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('830E8A3C53744D3E84B3DA060B3B41AB', 'cstm_264', '男', '2014-07-13', '186264', 'cstm_264@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B0770B6FF4A04727810B80C7ED99CD19', 'cstm_265', '女', '2014-07-13', '186265', 'cstm_265@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9125EE1136EB461089DA080206334F74', 'cstm_266', '男', '2014-07-13', '186266', 'cstm_266@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('7D6474C9865C444DA829778413CC9E03', 'cstm_267', '女', '2014-07-13', '186267', 'cstm_267@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('CAF6B920494E43CD98452AB20147C36F', 'cstm_268', '男', '2014-07-13', '186268', 'cstm_268@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('41E33051AD124DD18EDA38F2CA8E9144', 'cstm_269', '女', '2014-07-13', '186269', 'cstm_269@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('BE06CA64FCED40D085039F3370046278', 'cstm_270', '男', '2014-07-13', '186270', 'cstm_270@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('28624FBF6A654B59A8A1E9E7960DC9E3', 'cstm_271', '女', '2014-07-13', '186271', 'cstm_271@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('591B4512ACBF47558C9E02D75C27089D', 'cstm_272', '男', '2014-07-13', '186272', 'cstm_272@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E6EC0AE9781149C79DC78663DAF2211E', 'cstm_273', '女', '2014-07-13', '186273', 'cstm_273@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('D3BF9209590C4875BE18F3729F2CD189', 'cstm_274', '男', '2014-07-13', '186274', 'cstm_274@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('3A66055D1A204AE38504979DEEED96A2', 'cstm_275', '女', '2014-07-13', '186275', 'cstm_275@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('AB36B54F0E8548388D669929E0D99874', 'cstm_276', '男', '2014-07-13', '186276', 'cstm_276@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('DD3B0ACD97F741C492E36BED324C82AA', 'cstm_277', '女', '2014-07-13', '186277', 'cstm_277@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9D2A1E57076048E4989F187052C800C1', 'cstm_278', '男', '2014-07-13', '186278', 'cstm_278@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B3868EA4448B4B42A780B07B4B804054', 'cstm_279', '女', '2014-07-13', '186279', 'cstm_279@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('4EC3E27659B84C29A7D98E1D473B4380', 'cstm_280', '男', '2014-07-13', '186280', 'cstm_280@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('44D9DC7353C74787AEF66F7C6519943E', 'cstm_281', '女', '2014-07-13', '186281', 'cstm_281@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('E01F37D65EAD4480B50C44C340BB6710', 'cstm_282', '男', '2014-07-13', '186282', 'cstm_282@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0D56880CB7DF468785CF9DF0EB7EA8DB', 'cstm_283', '女', '2014-07-13', '186283', 'cstm_283@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('5A2E9ECA476A4FF6B2A00FEFA79F2778', 'cstm_284', '男', '2014-07-13', '186284', 'cstm_284@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('95AA30FFDEFD475EB5AF6F2AC23DB873', 'cstm_285', '女', '2014-07-13', '186285', 'cstm_285@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F856CD60F8754652B5033C7E84A547DC', 'cstm_286', '男', '2014-07-13', '186286', 'cstm_286@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('BBF23F1BB9FA4F80A5C08739839EBFC4', 'cstm_287', '女', '2014-07-13', '186287', 'cstm_287@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('8F70703D2FCF419893AF30CC965D8C41', 'cstm_288', '男', '2014-07-13', '186288', 'cstm_288@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('99EFB6FB7C994DC0B98C92DE4822C578', 'cstm_289', '女', '2014-07-13', '186289', 'cstm_289@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('A0BE516EFCDC40A18E506520F839D5A2', 'cstm_290', '男', '2014-07-13', '186290', 'cstm_290@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('A807FB0F351A426EB2364B6563378D85', 'cstm_291', '女', '2014-07-13', '186291', 'cstm_291@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('93544434ACA24543BED4D7CFF86490AE', 'cstm_292', '男', '2014-07-13', '186292', 'cstm_292@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('F7C7EEBE9C964A87981E7178DB4A3CD8', 'cstm_293', '女', '2014-07-13', '186293', 'cstm_293@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('43D5DB7D183E4C7A82FE982BC6E849C1', 'cstm_294', '男', '2014-07-13', '186294', 'cstm_294@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('07CFCF1B94C54B5780A944C221A14071', 'cstm_295', '女', '2014-07-13', '186295', 'cstm_295@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('0019486D397142DEB63B69FEA3376C3B', 'cstm_296', '男', '2014-07-13', '186296', 'cstm_296@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('870C7047CDC54158A50220AAB0D07DAA', 'cstm_297', '女', '2014-07-13', '186297', 'cstm_297@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('18381D726C9C4DC09A7BC4C83AE30A9E', 'cstm_298', '男', '2014-07-13', '186298', 'cstm_298@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('9F57D6C29B8A49099DB655980986C4D1', 'cstm_299', '女', '2014-07-13', '186299', 'cstm_299@163.com', '我是客户');
+INSERT INTO `t_customer` VALUES ('B452A64698D84558BCEFD0842B4DAB6C', 'cstm_300', '男', '2014-07-13', '186300', 'cstm_300@163.com', '我是客户');
