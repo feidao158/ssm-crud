@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.lzc.verifycode.VerifyCode;
 import com.zw.po.Customer;
 import com.zw.po.Customer2;
 import com.zw.po.PageInfo;
@@ -23,7 +24,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.Response;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -34,10 +38,10 @@ public class CustomerController {
     CustomerService customerService;
     @Autowired
     ObjectMapper objectMapper;
-    @RequestMapping(value = "/demo",produces = "application/json;charset=utf-8")
+
+    @RequestMapping(value = "/demo", produces = "application/json;charset=utf-8")
     @ResponseBody
-    public String  findAll()
-    {
+    public String findAll() {
 
 //获取第1页，10条内容，默认查询总数count
 //        PageHelper.startPage(1, 10);
@@ -48,7 +52,7 @@ public class CustomerController {
 ////分页时，实际返回的结果list类型是Page<E>，如果想取出分页信息，需要强制转换为Page<E>
 //        assertEquals(182, ((Page) list).getTotal());
         Page<Object> page = PageHelper.startPage(1, 10);
-        List<Customer2> customers = customerService.findAll();
+        List<Customer> customers = customerService.findAll();
         long total = page.getTotal();
         int pageNum = page.getPageSize();
         int pages = page.getPages();
@@ -70,35 +74,35 @@ public class CustomerController {
         return "-1";
 
     }
-    @RequestMapping(value = "/find/{pageNow}",produces = "application/json;charset=utf-8")
+
+    @RequestMapping(value = "/find/{pageNow}", produces = "application/json;charset=utf-8")
     @ResponseBody
-    public String findByPageHelper(@PathVariable("pageNow") Integer pageNow)
-    {
+    public String findByPageHelper(@PathVariable("pageNow") Integer pageNow) {
         int pageSize = 10; //固定每页十条数据
         System.out.println(pageNow);
         Page<Object> page = PageHelper.startPage(pageNow, pageSize);
-        List<Customer2> customers = customerService.findAll();
+        List<Customer> customers = customerService.findAll();
         try {
             String json = objectMapper.writeValueAsString(customers);
             return json;
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-            return "";
+        return "";
     }
-    @RequestMapping(value = "/pageInfo",produces = "application/json;charset=utf-8")
+
+    @RequestMapping(value = "/pageInfo", produces = "application/json;charset=utf-8")
     @ResponseBody
     /**
      * 获取页数 条目数 通过json 发送到前端
      */
-    public String pageBarInfo()
-    {
+    public String pageBarInfo() {
         Page<Object> page = PageHelper.startPage(1, 10);
-        List<Customer2> all = customerService.findAll();
+        List<Customer> all = customerService.findAll();
         long total = page.getTotal();
         int pages = page.getPages();//  分出来多少页
         int pageNum = page.getPageNum();
-        System.out.println("total:" + total + "pages:" + pages + "pageNum："+ pageNum);
+        System.out.println("total:" + total + "pages:" + pages + "pageNum：" + pageNum);
         int pageSize = page.getPageSize();
         try {
             String json = objectMapper.writeValueAsString(new PageInfo(pages, (int) total));
@@ -109,9 +113,24 @@ public class CustomerController {
         return "";
     }
 
+
+    @RequestMapping("/getCode")
+    public void getVerifyCode(HttpServletResponse response) {
+        VerifyCode verifyCode = new VerifyCode();
+        BufferedImage image = verifyCode.getImage();
+        String text = verifyCode.getText();
+        System.out.println(text);
+        try {
+            verifyCode.output(image,response.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
     @RequestMapping("/upload")
-    public void fileUpload(HttpServletRequest request, HttpServletResponse response)
-    {
+    public void fileUpload(HttpServletRequest request, HttpServletResponse response) {
         try {
             request.setCharacterEncoding("utf-8");
         } catch (UnsupportedEncodingException e) {
@@ -119,8 +138,7 @@ public class CustomerController {
         }
         String realPath = request.getServletContext().getRealPath("/WEB-INF/upload");
         File file = new File(realPath);
-        if(!file.exists())
-        {
+        if (!file.exists()) {
             boolean mkdir = file.mkdir();
             System.out.println(mkdir);
 
@@ -131,16 +149,14 @@ public class CustomerController {
         try {
             List<FileItem> fileItems = upload.parseRequest(request);
             System.out.println(fileItems.size());
-            for (FileItem item:fileItems
-                 ) {
-                if(item.isFormField())
-                {
+            for (FileItem item : fileItems
+            ) {
+                if (item.isFormField()) {
 
-                }else
-                    {
-                        String name = item.getName();
-                        System.out.println(name);
-                        File file2 = new File(file,name);
+                } else {
+                    String name = item.getName();
+                    System.out.println(name);
+                    File file2 = new File(file, name);
                     item.write(file2);
                     System.out.println("写入成功");
 

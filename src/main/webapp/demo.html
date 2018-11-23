@@ -56,12 +56,12 @@
                  <td>{{person.cid}}</td>
                  <td>{{person.cname}}</td>
                  <td>{{person.gender}}</td>
-                 <td>{{person.birthday}}</td>
+                 <td>{{person.birthday | dateFormat(person.birthday)}}</td>
                  <td>{{person.cellphone}}</td>
                  <td>{{person.email}}</td>
                  <td>{{person.description}}</td>
                  <td><div @click="show" class="btn btn-success"><span class="glyphicon glyphicon-cog"></span></div>
-                 <div @click="" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></div>
+                 <div @click="del(person.cid)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></div>
                  </td>
              </tr>
 
@@ -122,21 +122,38 @@
 </body>
 <script>
 
+    Vue.filter("dateFormat",function (data) {
+        var newDate = new Date(data)
+        var year = newDate.getFullYear();
+        var month =newDate.getMonth()+1;
+        var day = newDate.getDate()
+        return `${year}-${month}-${day}`
+    })
+
    var td =  new Vue({
         el:"#tb",
-        data:{people:""},
+        data:{people:null},
         methods:{change:function (data) {
                 this.people = data
             },
                 show:function () {
-                    $(".modal").modal("show")
 
+                    $(".modal").modal("show")
                 },
                 hide:function () {
                     $(".modal").modal("hide")
+                },
+                del(id)
+                {
+                  var index =  this.people.findIndex(item =>{
+                        if(item.cid ==id)
+                        {
+                            return true
+                        }
+                    })
+
+                   this.people.splice(index,1)
                 }
-
-
         }
     })
 
@@ -148,9 +165,6 @@
            }
        }
    })
-
-
-
     $(function () {
 
         $.get("http://localhost:8080/pageInfo",function (data) {

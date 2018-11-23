@@ -11,7 +11,7 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     CustomerMapper customerMapper;
-    public List<Customer2> findAll() {
+    public List<Customer> findAll() {
         return customerMapper.findAll();
     }
 }

@@ -14,7 +14,7 @@ public class TestMain {
     {
         ApplicationContext ctx= new ClassPathXmlApplicationContext("spring-dao.xml");
         CustomerMapper customerMapper = ctx.getBean(CustomerMapper.class);
-        List<Customer2> all = customerMapper.findAll();
+        List<Customer> all = customerMapper.findAll();
         System.out.println(all);
     }
 }

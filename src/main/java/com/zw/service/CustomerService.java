@@ -12,5 +12,5 @@ import java.util.List;
 public interface CustomerService {
 
 
-    public List<Customer2> findAll();
+    public List<Customer> findAll();
 }
