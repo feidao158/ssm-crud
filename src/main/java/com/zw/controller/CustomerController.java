@@ -6,7 +6,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.lzc.verifycode.VerifyCode;
 import com.zw.po.Customer;
-import com.zw.po.Customer2;
+
 import com.zw.po.PageInfo;
 import com.zw.service.CustomerService;
 import org.apache.commons.fileupload.FileItem;
@@ -16,19 +16,10 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.Response;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+
 import java.util.List;
 
 @Controller
@@ -66,7 +57,7 @@ public class CustomerController {
 
         try {
             String s = objectMapper.writeValueAsString(customers);
-            System.out.println(s);
+
             return s;
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -112,62 +103,80 @@ public class CustomerController {
         }
         return "";
     }
-
-
-    @RequestMapping("/getCode")
-    public void getVerifyCode(HttpServletResponse response) {
-        VerifyCode verifyCode = new VerifyCode();
-        BufferedImage image = verifyCode.getImage();
-        String text = verifyCode.getText();
-        System.out.println(text);
-        try {
-            verifyCode.output(image,response.getOutputStream());
-        } catch (IOException e) {
-            e.printStackTrace();
+    @RequestMapping("del")
+    @ResponseBody
+    public int delUser(@RequestParam("id") int id)
+    {
+        System.out.println("id:" + id);
+        int i = customerService.delUser(id);
+        if(i>=1)
+        {
+            return 1;
         }
-
+        return 0;
     }
 
-
-    @RequestMapping("/upload")
-    public void fileUpload(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.setCharacterEncoding("utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        String realPath = request.getServletContext().getRealPath("/WEB-INF/upload");
-        File file = new File(realPath);
-        if (!file.exists()) {
-            boolean mkdir = file.mkdir();
-            System.out.println(mkdir);
-
-        }
-
-        DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
-        ServletFileUpload upload = new ServletFileUpload(diskFileItemFactory);
-        try {
-            List<FileItem> fileItems = upload.parseRequest(request);
-            System.out.println(fileItems.size());
-            for (FileItem item : fileItems
-            ) {
-                if (item.isFormField()) {
-
-                } else {
-                    String name = item.getName();
-                    System.out.println(name);
-                    File file2 = new File(file, name);
-                    item.write(file2);
-                    System.out.println("写入成功");
-
-                }
-
-            }
-        } catch (FileUploadException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+    public int updateUser()
+    {
+        return 1;
     }
+
+//
+//    @RequestMapping("/getCode")
+//    public void getVerifyCode(HttpServletResponse response) {
+//        VerifyCode verifyCode = new VerifyCode();
+//        BufferedImage image = verifyCode.getImage();
+//        String text = verifyCode.getText();
+//        System.out.println(text);
+//        try {
+//            verifyCode.output(image,response.getOutputStream());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+
+
+//    @RequestMapping("/upload")
+//    public void fileUpload(HttpServletRequest request, HttpServletResponse response) {
+//        try {
+//            request.setCharacterEncoding("utf-8");
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
+//        String realPath = request.getServletContext().getRealPath("/WEB-INF/upload");
+//        File file = new File(realPath);
+//        if (!file.exists()) {
+//            boolean mkdir = file.mkdir();
+//            System.out.println(mkdir);
+//
+//        }
+//
+//        DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
+//        ServletFileUpload upload = new ServletFileUpload(diskFileItemFactory);
+//        try {
+//            List<FileItem> fileItems = upload.parseRequest(request);
+//            System.out.println(fileItems.size());
+//            for (FileItem item : fileItems
+//            ) {
+//                if (item.isFormField()) {
+//
+//                } else {
+//                    String name = item.getName();
+//                    System.out.println(name);
+//                    File file2 = new File(file, name);
+//                    item.write(file2);
+//                    System.out.println("写入成功");
+//
+//                }
+//
+//            }
+//        } catch (FileUploadException e) {
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+//    }
+
 }

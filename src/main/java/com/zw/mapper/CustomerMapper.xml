@@ -4,4 +4,13 @@
     <select id="findAll" resultType="com.zw.po.Customer">
         select * from t_customer
     </select>
+    <delete id="delUser">
+        delete from t_customer where cid = #{id}
+    </delete>
+
+    <insert id="addUser" parameterType="com.zw.po.Customer">
+        insert into t_customer(cname,gender,birthday,cellphone,description,email) values (
+        cname,gender,birthday,cellhone,description,email)
+        )
+    </insert>
 </mapper>

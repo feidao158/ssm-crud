@@ -1,7 +1,7 @@
 package com.zw.mapper;
 
 import com.zw.po.Customer;
-import com.zw.po.Customer2;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,7 +14,7 @@ public class TestMain {
     {
         ApplicationContext ctx= new ClassPathXmlApplicationContext("spring-dao.xml");
         CustomerMapper customerMapper = ctx.getBean(CustomerMapper.class);
-        List<Customer> all = customerMapper.findAll();
-        System.out.println(all);
+        int i = customerMapper.delUser(2);
+        System.out.println(i);
     }
 }

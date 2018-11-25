@@ -60,7 +60,7 @@
                  <td>{{person.cellphone}}</td>
                  <td>{{person.email}}</td>
                  <td>{{person.description}}</td>
-                 <td><div @click="show" class="btn btn-success"><span class="glyphicon glyphicon-cog"></span></div>
+                 <td><div @click="show(person.cid,person.cname,person.gender,person.cellphone,person.email,person.description)" class="btn btn-success"><span class="glyphicon glyphicon-cog"></span></div>
                  <div @click="del(person.cid)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></div>
                  </td>
              </tr>
@@ -80,33 +80,43 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3>这是一个标题</h3>
+                    <h3>修改信息</h3>
                 </div>
                <div class="modal-body">
-                   <form action="" class="form-horizontal">
+                   <form action="http://localhost:8080/update" class="form-horizontal">
+                       <input type="hidden" name="cid" :value="td.cid">
                        <div class="form-group">
                            <label for="" class="control-label col-md-2">cname</label>
                            <div class="col-md-6">
-                           <input type="text" class="form-control">
+                           <input type="text" class="form-control" :value="td.cname" name="cname" >
                            </div>
                        </div>
                        <div class="form-group">
                            <label for="" class="control-label col-md-2">gender</label>
                            <div class="col-md-6">
-                               <select name="" id="" class="form-control">
+                               <select name="" id="" class="form-control" name="gender" >
                                    <option value="男">男</option>
                                    <option value="女">女</option>
                                </select>
                            </div>
                        </div>
-                       <!--日期选择-->
+                       <!--cellphone-->
                        <div class="form-group">
-                           <label for="" class="control-label col-md-2">birthday</label>
+                           <label for="" class="control-label col-md-2">cellphone</label>
                            <div class="col-md-6">
-                               <select name="" id="" class="form-control">
-                                   <option value="男">男</option>
-                                   <option value="女">女</option>
-                               </select>
+                               <input type="text" class="form-control" :value="td.cellphone" name="cellphone" >
+                           </div>
+                       </div>
+                       <div class="form-group">
+                           <label for="" class="control-label col-md-2">email</label>
+                           <div class="col-md-6">
+                               <input type="text" class="form-control" :value="td.email" name="email" >
+                           </div>
+                       </div>
+                       <div class="form-group">
+                           <label for="" class="control-label col-md-2">description</label>
+                           <div class="col-md-6">
+                               <input type="text" class="form-control" :value="td.description" name="description" >
                            </div>
                        </div>
                    </form>
@@ -132,11 +142,26 @@
 
    var td =  new Vue({
         el:"#tb",
-        data:{people:null},
+        data:{people:null,
+                cname:null,
+                gender:null,
+                cellphone:null,
+                email:null,
+                description:null,
+                cid:null
+
+        },
         methods:{change:function (data) {
                 this.people = data
             },
-                show:function () {
+                show:function (cid,cname,gender,cellphone,email,description) {
+                    this.cname = cname;
+                    this.gender = gender;
+                    this.cellphone = cellphone;
+                    this.email = email;
+                    this.description = description;
+                    this.cid = cid;
+                    alert(cid)
 
                     $(".modal").modal("show")
                 },
@@ -151,6 +176,12 @@
                             return true
                         }
                     })
+                    $.post("http://localhost:8080/del",{id:id},function (data) {
+                       if(data==1)
+                       {
+                           alert("删除成功")
+                       }
+                    })
 
                    this.people.splice(index,1)
                 }
@@ -162,6 +193,10 @@
        methods:{
            hide:function () {
                $(".modal").modal("hide")
+           },
+           submit()
+           {
+
            }
        }
    })
