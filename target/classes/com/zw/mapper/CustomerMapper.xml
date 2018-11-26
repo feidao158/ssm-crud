@@ -9,8 +9,13 @@
     </delete>
 
     <insert id="addUser" parameterType="com.zw.po.Customer">
-        insert into t_customer(cname,gender,birthday,cellphone,description,email) values (
-        cname,gender,birthday,cellhone,description,email)
-        )
+        insert into t_customer(cname,gender,birthday,cellphone,description,email) values
+        (#{cname},#{gender},#{birthday},#{cellphone},#{description},#{email})
+
     </insert>
+
+    <update id="updateUser" parameterType="com.zw.po.Customer">
+        update t_customer set cname = #{cname},gender = #{gender},cellphone = #{cellphone},
+        email = #{email},description = #{description} where cid = #{cid}
+    </update>
 </mapper>

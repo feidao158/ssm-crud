@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -116,11 +117,29 @@ public class CustomerController {
         return 0;
     }
 
-    public int updateUser()
+    /**
+     * 如果传递的cid为空，添加用户 否则 更新用户
+     * @param customer
+     * @return
+     */
+    @RequestMapping("/update")
+    @ResponseBody
+    public int updateUser(Customer customer)
     {
-        return 1;
-    }
 
+        if(customer.getCid()==null ||customer.getCid().trim().toString().equals(""))
+        {
+//            添加成功 返回3
+            System.out.println("执行的添加操作");
+            customer.setBirthday(new Date());
+            customerService.addUser(customer);
+
+            return 3;
+        }
+//        更新成功 返回1
+        return customerService.updateUser(customer);
+
+    }
 //
 //    @RequestMapping("/getCode")
 //    public void getVerifyCode(HttpServletResponse response) {

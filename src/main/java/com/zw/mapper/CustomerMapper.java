@@ -12,4 +12,6 @@ public interface CustomerMapper {
     public int delUser(@Param("id") int id);
 
     public int addUser(Customer customer);
+
+    public int updateUser(Customer customer);
 }

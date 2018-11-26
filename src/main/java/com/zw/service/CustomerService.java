@@ -17,4 +17,6 @@ public interface CustomerService {
     public int addUser(Customer customer);
 
     public int delUser(int id);
+
+    public int updateUser(Customer customer);
 }

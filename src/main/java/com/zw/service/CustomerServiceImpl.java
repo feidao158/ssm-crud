@@ -23,4 +23,8 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> findAll() {
         return customerMapper.findAll();
     }
+
+    public int updateUser(Customer customer) {
+        return customerMapper.updateUser(customer);
+    }
 }
