@@ -94,7 +94,7 @@ public class CustomerController {
         long total = page.getTotal();
         int pages = page.getPages();//  分出来多少页
         int pageNum = page.getPageNum();
-        System.out.println("total:" + total + "pages:" + pages + "pageNum：" + pageNum);
+
         int pageSize = page.getPageSize();
         try {
             String json = objectMapper.writeValueAsString(new PageInfo(pages, (int) total));
@@ -140,62 +140,63 @@ public class CustomerController {
         return customerService.updateUser(customer);
 
     }
-//
-//    @RequestMapping("/getCode")
-//    public void getVerifyCode(HttpServletResponse response) {
-//        VerifyCode verifyCode = new VerifyCode();
-//        BufferedImage image = verifyCode.getImage();
-//        String text = verifyCode.getText();
-//        System.out.println(text);
-//        try {
-//            verifyCode.output(image,response.getOutputStream());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
+    @RequestMapping(value = "/findSome",produces = "application/json;charset=utf-8")
+    @ResponseBody
+    public String findSome(@RequestParam("paramname") String paramName,@RequestParam("keywords")String keywords)
+    {
+       Customer customer = new Customer();
+//        cname cellphone email description
+        System.out.println(paramName);
+        if(paramName.equals("cname"))
+        {
+            customer.setCname(keywords);
+            System.out.println(keywords);
+
+                List<Customer> some = customerService.findSome(customer);
 
 
-//    @RequestMapping("/upload")
-//    public void fileUpload(HttpServletRequest request, HttpServletResponse response) {
-//        try {
-//            request.setCharacterEncoding("utf-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        String realPath = request.getServletContext().getRealPath("/WEB-INF/upload");
-//        File file = new File(realPath);
-//        if (!file.exists()) {
-//            boolean mkdir = file.mkdir();
-//            System.out.println(mkdir);
-//
-//        }
-//
-//        DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
-//        ServletFileUpload upload = new ServletFileUpload(diskFileItemFactory);
-//        try {
-//            List<FileItem> fileItems = upload.parseRequest(request);
-//            System.out.println(fileItems.size());
-//            for (FileItem item : fileItems
-//            ) {
-//                if (item.isFormField()) {
-//
-//                } else {
-//                    String name = item.getName();
-//                    System.out.println(name);
-//                    File file2 = new File(file, name);
-//                    item.write(file2);
-//                    System.out.println("写入成功");
-//
-//                }
-//
-//            }
-//        } catch (FileUploadException e) {
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+            try {
+                return objectMapper.writeValueAsString(some);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
 
-//    }
+        }else if(paramName.equals("cellphone"))
+        {
+            customer.setCellphone(Integer.parseInt(keywords));
+            List<Customer> some = customerService.findSome(customer);
+            System.out.println(some);
+            try {
+                return objectMapper.writeValueAsString(some);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+
+        }else if(paramName.equals("email"))
+        {
+            customer.setEmail(keywords);
+            List<Customer> some = customerService.findSome(customer);
+            System.out.println(some);
+            try {
+                return objectMapper.writeValueAsString(some);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+
+        }else
+        {
+            customer.setDescription(keywords);
+            List<Customer> some = customerService.findSome(customer);
+            System.out.println(some);
+            try {
+                return objectMapper.writeValueAsString(some);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return "-1";
+    }
+
 
 }

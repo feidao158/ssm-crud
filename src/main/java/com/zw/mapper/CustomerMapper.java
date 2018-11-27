@@ -14,4 +14,6 @@ public interface CustomerMapper {
     public int addUser(Customer customer);
 
     public int updateUser(Customer customer);
+
+    public List<Customer> findSome(Customer customer);
 }

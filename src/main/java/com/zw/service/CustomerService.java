@@ -19,4 +19,5 @@ public interface CustomerService {
     public int delUser(int id);
 
     public int updateUser(Customer customer);
+    public List<Customer> findSome(Customer customer);
 }

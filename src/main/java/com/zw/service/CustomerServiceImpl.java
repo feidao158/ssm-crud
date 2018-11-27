@@ -16,6 +16,10 @@ public class CustomerServiceImpl implements CustomerService {
         return customerMapper.addUser(customer);
     }
 
+    public List<Customer> findSome(Customer customer) {
+        return  customerMapper.findSome(customer);
+    }
+
     public int delUser(int id) {
         return customerMapper.delUser(id);
     }

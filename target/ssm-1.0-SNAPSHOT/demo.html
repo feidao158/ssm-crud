@@ -45,9 +45,24 @@
                 <h4>条件查询</h4>
             </div>
             <div class="panel-body">
-                <select name="" id="">
-                    <option value="">name</option>
-                </select>
+                <div class="form-group form-inline">
+                    <select name="selected" id="methods" class="form-control col-md-2" v-model="selected">
+                        <option value="cname">name</option>
+                        <option value="cellphone">cellphone</option>
+                        <option value="email">email</option>
+                        <option value="description">description</option>
+                    </select>
+                    <div class="col-md-2">
+                        <input type="text" name="keywords" class="form-control" v-model="keywords">
+                    </div>
+                    <div class="col-md-2">
+                        <div class="btn btn-primary form-control" @click="findSome">条件查询</div>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="" class=""><input type="checkbox" class="form-control" v-model="open" >开启条件查询</label>
+                        <button @click="openCheck()">Test</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -88,6 +103,7 @@
             </ul>
 
         </div>
+    <!--tb end-->
     </div>
     <div class="modal fade" id="modal">
         <div class="modal-dialog">
@@ -162,7 +178,10 @@
                 cellphone:null,
                 email:null,
                 description:null,
-                cid:null
+                cid:null,
+                selected:null,
+                keywords:null,
+                open:false
 
         },
         methods:{change:function (data) {
@@ -200,6 +219,22 @@
 
                    this.people.splice(index,1)
                 },
+        //        条件查询
+                findSome()
+                {
+
+                    $.post("http://localhost:8080/findSome",{
+                        paramname:this.selected,
+                        keywords:this.keywords
+                    },function (data) {
+
+                        tb.change(data)
+                    })
+                },
+                openCheck()
+                {
+                    alert(this.open)
+                }
 
 
         }

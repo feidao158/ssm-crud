@@ -18,4 +18,25 @@
         update t_customer set cname = #{cname},gender = #{gender},cellphone = #{cellphone},
         email = #{email},description = #{description} where cid = #{cid}
     </update>
+
+    <select id="findSome" parameterType="com.zw.po.Customer" resultType="com.zw.po.Customer">
+        select * from t_customer
+        <where>
+          <if test="cname!=null">
+           and   cname like '%${cname}%'
+          </if>
+            
+          <if test="cellphone!=0">
+            and  cellphone like '%${cellphone}%'
+          </if>
+            <if test="email!=null">
+                and  email like '%${email}%'
+            </if>
+            <if test="description!=null">
+                and  description like '%${description}%'
+            </if>
+
+    </where>
+    </select>
+
 </mapper>
