@@ -69,6 +69,7 @@
   <properties>
     <!-- 设置项目编码编码 -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- spring版本号 -->
     <spring.version>4.3.5.RELEASE</spring.version>

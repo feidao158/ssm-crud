@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -127,6 +128,7 @@ public class CustomerController {
     public int updateUser(Customer customer)
     {
 
+        
         if(customer.getCid()==null ||customer.getCid().trim().toString().equals(""))
         {
 //            添加成功 返回3
@@ -144,6 +146,7 @@ public class CustomerController {
     @ResponseBody
     public String findSome(@RequestParam("paramname") String paramName,@RequestParam("keywords")String keywords)
     {
+
        Customer customer = new Customer();
 //        cname cellphone email description
         System.out.println(paramName);
