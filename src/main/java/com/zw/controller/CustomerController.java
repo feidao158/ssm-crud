@@ -128,7 +128,7 @@ public class CustomerController {
     public int updateUser(Customer customer)
     {
 
-        
+        System.out.println(customer.getCid());
         if(customer.getCid()==null ||customer.getCid().trim().toString().equals(""))
         {
 //            添加成功 返回3

@@ -248,13 +248,14 @@
            },
            submit()
            {
-
+                alert(tb.cid)
                $.post("http://localhost:8080/update",{
                     cname:tb.cname,
                     gender:tb.gender,
                     cellphone:tb.cellphone,
                    email:tb.email,
                    description:tb.description,
+                   cid:tb.cid
 
 
                },function (data) {
